@@ -1,0 +1,47 @@
+@import url('https://cdn.jsdelivr.net/npm/maple-mono@1.0.6/maple-mono.css');
+@import "tailwindcss";
+
+@theme {
+  --font-mono: "Maple Mono", monospace, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+@layer base {
+  :root {
+    --bg-color: #0c0c0c;
+    --terminal-bg: #141414;
+    --border-color: #222222;
+    
+    --text-primary: #ededed;
+    --text-dim: #888888;
+    
+    /* Semantic Colors for Hierarchy without Size Variation */
+    --color-heading: #87afff;   /* Blue */
+    --color-link: #5fd7af;      /* Teal */
+    --color-accent: #ff5f87;    /* Magenta */
+    --color-highlight: #dfffaf; /* Yellow */
+  }
+
+  body {
+    @apply bg-[var(--bg-color)] text-[var(--text-primary)] text-[14px] font-mono selection:bg-[var(--color-link)] selection:text-black;
+  }
+  
+  /* Disable all heading default sizes */
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-[14px] font-bold m-0 p-0;
+  }
+}
+
+@layer utilities {
+  .terminal-border {
+    @apply border border-[var(--border-color)] bg-[var(--terminal-bg)];
+  }
+  
+  .bracket-link {
+    @apply before:content-['['] after:content-[']'] text-[var(--color-link)] hover:text-[var(--color-highlight)] hover:underline transition-colors cursor-pointer;
+  }
+  
+  .bracket-link::before,
+  .bracket-link::after {
+    @apply text-[var(--text-dim)] px-1 no-underline inline-block transition-colors;
+  }
+}
