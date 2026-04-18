@@ -10,6 +10,7 @@ export interface ContentItem {
   date?: string;
   journal?: string;
   type: 'research' | 'project' | 'publication';
+  image?: string;
 }
 
 export const RESEARCH: ContentItem[] = [
@@ -19,6 +20,7 @@ export const RESEARCH: ContentItem[] = [
     name: "Khmer Optical Character Recognition",
     description: "A Squeeze-and-Excitation Transformer Network for Khmer Optical Character Recognition.",
     tech: ["Deep Learning", "Transformers", "Computer Vision"],
+    image: "../src/assets/ocr.png"
   },
   {
     id: "r2",

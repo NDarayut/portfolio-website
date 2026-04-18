@@ -17,41 +17,53 @@ export default function Publications({ onSelect }: PublicationsProps) {
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5 }}
     >
-      <div className="absolute top-0 right-0 p-4 border-b border-l border-[var(--border-color)] text-[var(--color-heading)] font-bold tracking-widest bg-[var(--bg-color)]">
-         MODULE_02
-      </div>
+
       <div className="flex items-center gap-4">
-        <h2 className="text-[var(--color-heading)] font-bold uppercase tracking-[0.2em] bg-[var(--color-heading)]/10 px-4 py-2 border border-[var(--color-heading)]/20">Publications</h2>
+        <h2 className="text-[var(--color-title)] font-bold text-2xl tracking-[0.2em] bg-[var(--color-title-bg)] px-1 py-1">## Publications</h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-24 mt-12">
         {PUBLICATIONS.map((item) => (
           <div 
             key={item.id} 
             onClick={() => onSelect(item)}
-            className="group flex flex-col gap-4 cursor-pointer"
+            className="group flex flex-col xl:flex-row gap-8 cursor-pointer border-b border-[var(--border-color)]/20 pb-12 items-start h-full"
           >
-            <h3 className="text-[var(--color-link)] font-bold uppercase tracking-widest leading-tight group-hover:text-[var(--color-highlight)] transition-colors line-clamp-2 min-h-[2.5rem]">
-              {item.name}
-            </h3>
-            
-            <div className="flex items-stretch gap-6">
-               <div className="w-[55%] flex flex-col justify-between">
-                  <div>
-                    <p className="text-[var(--text-primary)] leading-snug">{item.journal}</p>
-                    <p className="text-[var(--text-dim)] font-bold mt-2">[{item.date}]</p>
-                  </div>
-                  <div className="flex items-center gap-2 text-[var(--color-accent)] opacity-0 group-hover:opacity-100 transition-opacity font-bold mt-auto">
-                     <span>READ_DOC</span>
-                     <ArrowUpRight size={14} />
-                  </div>
-               </div>
-               <div className="w-[45%] rounded-md terminal-border flex items-center justify-center group-hover:border-[var(--color-link)] transition-colors relative overflow-hidden aspect-[4/3] bg-black/40">
-                  <div className="absolute inset-0 bg-[var(--color-link)] opacity-0 group-hover:opacity-10 transition-opacity"></div>
-                  <div className="group-hover:scale-110 transition-transform duration-500">
-                    <Database size={48} className="text-[#333] group-hover:text-[var(--color-link)] transition-colors" />
-                  </div>
-               </div>
+            {/* Left Side: Title + Metadata */}
+            <div className="w-full xl:w-[45%] flex flex-col">
+              <h3 className="text-xl font-bold text-[var(--color-heading)] tracking-[0.1em] mb-4 group-hover:text-[var(--color-link)] transition-colors">
+                {item.name}
+              </h3>
+              
+              <div className="mb-4">
+                 <p className="text-[var(--text-primary)] leading-tight opacity-90 text-sm">{item.journal}</p>
+                 <p className="text-[var(--text-dim)] font-bold mt-1 text-xs">[{item.date}]</p>
+              </div>
+
+              <p className="text-[var(--text-primary)] leading-relaxed opacity-70 group-hover:opacity-100 transition-opacity text-xs line-clamp-4">
+                {item.description}
+              </p>
+              
+              <div className="flex items-center gap-2 text-[var(--color-accent)] opacity-0 group-hover:opacity-100 transition-opacity font-bold mt-8 text-[10px] tracking-widest">
+                 <span>[ ACCESS_DOC ]</span>
+                 <ArrowUpRight size={12} />
+              </div>
+            </div>
+
+            {/* Right Side: Image */}
+            <div className="w-full xl:w-[55%] relative aspect-video bg-black/10 rounded-sm overflow-hidden flex items-center justify-center">
+               {item.image ? (
+                  <img 
+                     src={item.image} 
+                     alt={item.name}
+                     referrerPolicy="no-referrer"
+                     className="w-full h-full object-contain transition-all filter drop-shadow-[0_0_10px_rgba(0,0,0,0.3)]" 
+                   />
+               ) : (
+                 <div className="p-8 opacity-20 flex items-center justify-center h-full">
+                   <Database size={48} className="text-[#333] group-hover:text-[var(--color-link)] transition-colors" />
+                 </div>
+               )}
             </div>
           </div>
         ))}

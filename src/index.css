@@ -15,8 +15,11 @@
     --text-dim: #888888;
     
     /* Semantic Colors for Hierarchy without Size Variation */
+    --color-title: #d0d308;     
+    --color-title-bg: #082dd3; 
     --color-heading: #87afff;   /* Blue */
-    --color-link: #5fd7af;      /* Teal */
+    --color-text: #7aff60;
+    --color-link: #87afff;      /* Teal */
     --color-accent: #ff5f87;    /* Magenta */
     --color-highlight: #dfffaf; /* Yellow */
   }
@@ -62,7 +65,7 @@
   }
   
   .bracket-link {
-    @apply before:content-['['] after:content-[']'] text-[var(--color-link)] hover:text-[var(--color-highlight)] hover:underline transition-colors cursor-pointer;
+    @apply before:content-['['] after:content-[']'] text-[var(--color-text)] hover:text-[var(--color-link)] hover:underline transition-colors cursor-pointer;
   }
   
   .bracket-link::before,
