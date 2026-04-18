@@ -75,3 +75,14 @@
     @apply text-[var(--text-dim)] px-1 no-underline inline-block transition-colors;
   }
 }
+
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.cursor-blink {
+  animation: blink 1s step-start infinite;
+}

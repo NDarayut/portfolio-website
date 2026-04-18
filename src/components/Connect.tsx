@@ -13,9 +13,20 @@ export default function Connect() {
       transition={{ duration: 0.5 }}
     >
 
-      <div className="flex items-center gap-4">
-        <h2 className="text-[var(--color-title)] text-lg tracking-[0.2em] bg-[var(--color-title-bg)] px-1 py-1">## Contacts</h2>
-      </div>
+      <div className="font-mono text-lg">
+            <span className="text-sky-400">darayut</span>
+            <span className="text-yellow-200">@portfolio</span>
+            <span className="text-gray-500">:</span>
+            <span className="text-emerald-300">~</span>
+            <span className="text-gray-500">$</span>{' '}
+            
+            <span className="text-[var(--color-text)]">cat contact.txt</span>
+
+            <span className="text-sky-400 cursor-blink">▌</span>
+          </div>
+      {/* <div className="flex items-center gap-4">
+        <h2 className="text-[var(--color-title)] text-lg tracking-[0.2em] bg-[var(--color-title-bg)] px-2 py-1">Contacts</h2>
+      </div> */}
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
         

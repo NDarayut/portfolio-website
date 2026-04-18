@@ -18,11 +18,22 @@ export default function Publications({ onSelect }: PublicationsProps) {
       transition={{ duration: 0.5 }}
     >
 
-      <div className="flex items-center gap-4">
-        <h2 className="text-[var(--color-title)] text-lg tracking-[0.2em] bg-[var(--color-title-bg)] px-1 py-1">## Publications</h2>
-      </div>
+      <div className="font-mono text-lg">
+            <span className="text-sky-400">darayut</span>
+            <span className="text-yellow-200">@portfolio</span>
+            <span className="text-gray-500">:</span>
+            <span className="text-emerald-300">~</span>
+            <span className="text-gray-500">$</span>{' '}
+            
+            <span className="text-[var(--color-text)]">cat publications.txt</span>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-24 mt-12">
+            <span className="text-sky-400 cursor-blink">▌</span>
+          </div>
+      {/* <div className="flex items-center gap-4">
+        <h2 className="text-[var(--color-title)] text-lg tracking-[0.2em] bg-[var(--color-title-bg)] px-2 py-1">Publications</h2>
+      </div> */}
+
+      <div className="mt-12 space-y-2">
         {PUBLICATIONS.map((item) => (
           <div 
             key={item.id} 
@@ -39,7 +50,7 @@ export default function Publications({ onSelect }: PublicationsProps) {
           >
             {/* Left Side: Title + Metadata */}
             <div className="w-full xl:w-[45%] flex flex-col">
-              <h3 className="text-xl font-bold text-[var(--color-text)] tracking-[0.1em] mb-4 group-hover:text-[var(--color-link)] transition-none">
+              <h3 className="text-lg text-[var(--color-text)] tracking-[0.1em] mb-4 group-hover:text-[var(--color-link)] transition-none">
                 {item.name}
               </h3>
               
@@ -48,7 +59,7 @@ export default function Publications({ onSelect }: PublicationsProps) {
                  <p className="text-[var(--text-dim)] font-bold mt-1 text-xs">[{item.date}]</p>
               </div>
 
-              <p className="text-[var(--text-primary)] leading-relaxed opacity-70 group-hover:opacity-100 transition-opacity text-xs line-clamp-4">
+              <p className="text-lg leading-relaxed opacity-80 group-hover:opacity-100 lg:text-sm line-clamp-6">
                 {item.description}
               </p>
               

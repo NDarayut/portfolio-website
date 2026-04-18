@@ -11,6 +11,12 @@ export default function Bio() {
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5 }}
     >
+      <div className="font-mono text-sm text-gray-500 leading-snug space-y-1">
+        <p className="text-gray-400">Portfolio OS v1.0</p>
+        <p>initializing environment...</p>
+        <p className="opacity-70">ready.</p>
+      </div>
+
       <div className="text-[var(--color-text)] opacity-60 select-none hidden md:block">
         <pre className="leading-tight overflow-x-auto">
 {`
@@ -27,14 +33,26 @@ export default function Bio() {
       <div className="space-y-8">
 
         <div className="space-y-6 leading-loose max-w-4xl text-lg">
+          <div className="font-mono text-lg">
+            <span className="text-sky-400">darayut</span>
+            <span className="text-yellow-200">@portfolio</span>
+            <span className="text-gray-500">:</span>
+            <span className="text-emerald-300">~</span>
+            <span className="text-gray-500">$</span>{' '}
+            
+            <span className="text-[var(--color-text)]">cat about.txt</span>
+
+            <span className="text-sky-400 cursor-blink">▌</span>
+          </div>
+
           <p>
-            Hey, I’m Darayut
+            Hey, I’m <span className="bg-mist-700 text-emerald-400 px-2">darayut</span>
           </p>
           <p>
-            I’m a data scientist based in Phnom Penh, currently working at a credit bureau where I build machine learning models to help banks and financial institutions make better decisions.
+            I’m a <span className="bg-mist-700 text-emerald-400 px-2">data scientist</span> based in Phnom Penh, currently working at a credit bureau where I build machine learning models to help banks and financial institutions make better decisions.
           </p>
           <p>
-            I graduated with a Bachelor’s degree in Information Technology Engineering from the Royal University of Phnom Penh in 2026.
+            I graduated with a Bachelor’s degree in <span className="bg-mist-700 text-emerald-400 px-2">Information Technology Engineering</span> from the Royal University of Phnom Penh in 2026.
           </p>
           <p>
             I’m especially interested in deep learning and enjoy exploring new advancements in the field. I’ve worked on projects ranging from Khmer OCR to historical document reconstruction using deep learning.
