@@ -32,8 +32,16 @@ export default function Projects({ onSelect }: ProjectsProps) {
         {RESEARCH.map((item) => (
           <div 
             key={item.id}
-            onClick={() => onSelect(item)}
+            onClick={() => {
+              if (item.github) {
+                window.open(item.github, '_blank', 'noopener,noreferrer');
+              } else {
+                onSelect(item);
+              }
+            }}
             className="group flex flex-col xl:flex-row gap-8 cursor-pointer border-b border-[var(--border-color)]/20 pb-12 items-start h-full"
+            role="button"
+            tabIndex={0}
           >
             {/* Left Side: Title + Description */}
             <div className="w-full xl:w-[45%] flex flex-col">
