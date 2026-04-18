@@ -48,9 +48,6 @@ export default function App() {
         <Publications onSelect={setSelectedItem} />
         <Connect />
 
-        <footer className="text-center py-12 border-t border-[var(--border-color)] text-[var(--color-heading)] font-bold uppercase tracking-[0.5em]">
-          <p>DARAYUT_SYS // EOF // 2026</p>
-        </footer>
       </main>
 
       <ItemModal item={selectedItem} onClose={() => setSelectedItem(null)} />

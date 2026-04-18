@@ -12,11 +12,9 @@ export default function Connect() {
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5 }}
     >
-      <div className="absolute top-0 right-0 p-4 border-b border-l border-[var(--border-color)] text-[var(--color-heading)] font-bold tracking-widest bg-[var(--bg-color)]">
-         MODULE_03
-      </div>
+
       <div className="flex items-center gap-4">
-        <h2 className="text-[var(--color-heading)] font-bold uppercase tracking-[0.2em] bg-[var(--color-heading)]/10 px-4 py-2 border border-[var(--color-heading)]/20">Connect_Nodes</h2>
+        <h2 className="text-[var(--color-title)] font-bold text-2xl tracking-[0.2em] bg-[var(--color-title-bg)] px-1 py-1">## Contacts</h2>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
