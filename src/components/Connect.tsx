@@ -1,9 +1,17 @@
 import React from 'react';
+import { motion } from 'motion/react';
 import { SOCIALS } from '../constants';
 
 export default function Connect() {
   return (
-    <section id="connect" className="space-y-8 border-t border-[var(--border-color)] pt-8 pb-16 relative">
+    <motion.section 
+      id="connect" 
+      className="space-y-8 border-t border-[var(--border-color)] pt-8 pb-16 relative"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="absolute top-0 right-0 p-4 border-b border-l border-[var(--border-color)] text-[var(--color-heading)] font-bold tracking-widest bg-[var(--bg-color)]">
          MODULE_03
       </div>
@@ -46,6 +54,6 @@ export default function Connect() {
              </div>
          </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

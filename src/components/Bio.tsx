@@ -1,8 +1,16 @@
 import React from 'react';
+import { motion } from 'motion/react';
 
 export default function Bio() {
   return (
-    <section id="bio" className="space-y-12">
+    <motion.section 
+      id="bio" 
+      className="space-y-12"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="text-[var(--color-link)] opacity-60 select-none hidden md:block">
         <pre className="leading-tight overflow-x-auto">
 {`
@@ -39,6 +47,6 @@ export default function Bio() {
            <span className="text-[var(--color-heading)]">AVAILABLE_FOR_CONTACT</span>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

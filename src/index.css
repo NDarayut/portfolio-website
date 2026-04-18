@@ -24,6 +24,31 @@
   body {
     @apply bg-[var(--bg-color)] text-[var(--text-primary)] text-[14px] font-mono selection:bg-[var(--color-link)] selection:text-black;
   }
+
+  html {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-color) var(--bg-color);
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--bg-color);
+    border-left: 1px solid var(--border-color);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--text-dim);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-link);
+  }
   
   /* Disable all heading default sizes */
   h1, h2, h3, h4, h5, h6 {
