@@ -26,7 +26,7 @@ export default function Bio() {
 
       <div className="space-y-8">
 
-        <div className="space-y-6 leading-loose max-w-4xl">
+        <div className="space-y-6 leading-loose max-w-4xl text-lg">
           <p>
             Hey, I’m Darayut
           </p>

@@ -17,7 +17,7 @@ export default function Projects({ onSelect }: ProjectsProps) {
   return (
     <motion.section 
       id="projects" 
-      className="space-y-8 border-t border-[var(--border-color)] pt-8 relative"
+      className="space-y-8 pt-8 relative"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
@@ -25,7 +25,7 @@ export default function Projects({ onSelect }: ProjectsProps) {
     >
 
       <div className="flex items-center gap-4">
-        <h2 className="text-[var(--color-title)] font-bold text-2xl tracking-[0.2em] bg-[var(--color-title-bg)] px-1 py-1">## Projects</h2>
+        <h2 className="text-[var(--color-title)] text-lg tracking-[0.2em] bg-[var(--color-title-bg)] px-1 py-1">## Projects</h2>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-24 mt-12">
@@ -45,11 +45,11 @@ export default function Projects({ onSelect }: ProjectsProps) {
           >
             {/* Left Side: Title + Description */}
             <div className="w-full xl:w-[45%] flex flex-col">
-              <h3 className="text-xl font-bold text-[var(--color-text)] tracking-[0.1em] mb-4 group-hover:text-[var(--color-link)] transition-colors">
+              <h3 className="text-lg text-[var(--color-text)] tracking-[0.1em] mb-4 group-hover:text-[var(--color-link)] transition-none">
                 {item.name}
               </h3>
               
-              <p className="text-[var(--text-primary)] leading-relaxed opacity-80 group-hover:opacity-100 transition-opacity text-xs lg:text-sm line-clamp-6">
+              <p className="text-lg leading-relaxed opacity-80 group-hover:opacity-100 lg:text-sm line-clamp-6">
                 {item.description}
               </p>
               

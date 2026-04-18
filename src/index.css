@@ -15,7 +15,7 @@
     --text-dim: #888888;
     
     /* Semantic Colors for Hierarchy without Size Variation */
-    --color-title: #d0d308;     
+    --color-title: #f1f442;     
     --color-title-bg: #082dd3; 
     --color-heading: #87afff;   /* Blue */
     --color-text: #7aff60;
@@ -65,8 +65,10 @@
   }
   
   .bracket-link {
-    @apply before:content-['['] after:content-[']'] text-[var(--color-text)] hover:text-[var(--color-link)] hover:underline transition-colors cursor-pointer;
+    @apply before:content-['['] after:content-[']'] text-[var(--color-text)] hover:text-[var(--color-link)] hover:underline transition-none cursor-pointer;
   }
+
+   
   
   .bracket-link::before,
   .bracket-link::after {
