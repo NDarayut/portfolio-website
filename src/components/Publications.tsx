@@ -25,7 +25,7 @@ export default function Publications({ onSelect }: PublicationsProps) {
             <span className="text-emerald-300">~</span>
             <span className="text-gray-500">$</span>{' '}
             
-            <span className="text-[var(--color-text)]">cat publications.txt</span>
+            <span className="text-[var(--color-text)]">publications</span>
 
             <span className="text-sky-400 cursor-blink">▌</span>
           </div>

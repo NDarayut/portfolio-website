@@ -11,22 +11,21 @@ export default function Bio() {
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5 }}
     >
-      <div className="font-mono text-sm text-gray-500 leading-snug space-y-1">
-        <p className="text-gray-400">Portfolio OS v1.0</p>
-        <p>initializing environment...</p>
-        <p className="opacity-70">ready.</p>
+      <div className="font-mono text-lg leading-snug space-y-1">
+        <p className='text-[var(--color-text)]'>Notreal Terminal</p>
+        <p className='text-[var(--color-text)]'>Copyright (C) NDarayut Terminal [Version 1.0.0]. All rights reserved.</p>
       </div>
 
       <div className="text-[var(--color-text)] opacity-60 select-none hidden md:block">
         <pre className="leading-tight overflow-x-auto">
-{`
-██╗    ██╗███████╗██╗      ██████╗ ██████╗ ███╗   ███╗███████╗██╗██╗
-██║    ██║██╔════╝██║     ██╔════╝██╔═══██╗████╗ ████║██╔════╝██║██║
-██║ █╗ ██║█████╗  ██║     ██║     ██║   ██║██╔████╔██║█████╗  ██║██║
-██║███╗██║██╔══╝  ██║     ██║     ██║   ██║██║╚██╔╝██║██╔══╝  ╚═╝╚═╝
-╚███╔███╔╝███████╗███████╗╚██████╗╚██████╔╝██║ ╚═╝ ██║███████╗██╗██╗
- ╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝╚═╝╚═╝
-`}
+      {`
+      ██╗    ██╗███████╗██╗      ██████╗ ██████╗ ███╗   ███╗███████╗██╗██╗
+      ██║    ██║██╔════╝██║     ██╔════╝██╔═══██╗████╗ ████║██╔════╝██║██║
+      ██║ █╗ ██║█████╗  ██║     ██║     ██║   ██║██╔████╔██║█████╗  ██║██║
+      ██║███╗██║██╔══╝  ██║     ██║     ██║   ██║██║╚██╔╝██║██╔══╝  ╚═╝╚═╝
+      ╚███╔███╔╝███████╗███████╗╚██████╗╚██████╔╝██║ ╚═╝ ██║███████╗██╗██╗
+      ╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝╚═╝╚═╝
+      `}
         </pre>
       </div>
 
@@ -40,7 +39,7 @@ export default function Bio() {
             <span className="text-emerald-300">~</span>
             <span className="text-gray-500">$</span>{' '}
             
-            <span className="text-[var(--color-text)]">cat about.txt</span>
+            <span className="text-[var(--color-text)]">about</span>
 
             <span className="text-sky-400 cursor-blink">▌</span>
           </div>

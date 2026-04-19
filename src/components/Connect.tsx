@@ -20,7 +20,7 @@ export default function Connect() {
             <span className="text-emerald-300">~</span>
             <span className="text-gray-500">$</span>{' '}
             
-            <span className="text-[var(--color-text)]">cat contact.txt</span>
+            <span className="text-[var(--color-text)]">contact</span>
 
             <span className="text-sky-400 cursor-blink">▌</span>
           </div>

@@ -31,7 +31,7 @@ export default function Projects({ onSelect }: ProjectsProps) {
         <span className="text-emerald-300">~</span>
         <span className="text-gray-500">$</span>{' '}
         
-        <span className="text-[var(--color-text)]">cat projects.txt</span>
+        <span className="text-[var(--color-text)]">projects</span>
 
         <span className="text-sky-400 cursor-blink">▌</span>
       </div>
