@@ -42,7 +42,7 @@ export default function App() {
     <div className="relative min-h-screen w-full bg-[var(--bg-color)] font-mono text-[var(--text-primary)] px-4 md:px-8 pb-32">
       <Navigation onNavigate={scrollToSection} />
 
-      <main className="max-w-2xl mx-auto mt-32">
+      <main className="max-w-2xl mx-auto pt-32">
         <Bio />
         <Projects onSelect={setSelectedItem} />
         <Publications onSelect={setSelectedItem} />

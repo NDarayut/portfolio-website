@@ -14,15 +14,15 @@ export default function Connect() {
     >
 
       <div className="font-mono text-lg">
-            <span className="text-sky-400">darayut</span>
-            <span className="text-yellow-200">@portfolio</span>
-            <span className="text-gray-500">:</span>
-            <span className="text-emerald-300">~</span>
-            <span className="text-gray-500">$</span>{' '}
+            <span className="text-[var(--color-heading)]">darayut</span>
+            <span className="text-[var(--color-title)]">@portfolio</span>
+            <span className="text-[var(--text-dim)]">:</span>
+            <span className="text-[var(--color-text)]">~</span>
+            <span className="text-[var(--text-dim)]">$</span>{' '}
             
             <span className="text-[var(--color-text)]">contact</span>
 
-            <span className="text-sky-400 cursor-blink">▌</span>
+            <span className="text-[var(--color-heading)] cursor-blink">▌</span>
           </div>
       {/* <div className="flex items-center gap-4">
         <h2 className="text-[var(--color-title)] text-lg tracking-[0.2em] bg-[var(--color-title-bg)] px-2 py-1">Contacts</h2>
