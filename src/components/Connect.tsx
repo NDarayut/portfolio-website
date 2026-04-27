@@ -28,27 +28,28 @@ export default function Connect() {
         <h2 className="text-[var(--color-title)] text-lg tracking-[0.2em] bg-[var(--color-title-bg)] px-2 py-1">Contacts</h2>
       </div> */}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
-        
-         
-         <div className="space-y-4">
-            <ul className="list-disc pl-5 flex flex-col gap-4">
-              {SOCIALS.map(s => (
-                <li key={s.name}>
-                  <a 
-                    href={s.url} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="font-bold  text-[var(--color-text)] tracking-[0.1em] mb-4 hover:text-[var(--color-link)] hover:underline transition-none"
-                  >
-                    {s.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-         </div>
-         
-         
+      <div className="mt-8">
+        <div className="space-y-1 font-mono text-sm">
+          {SOCIALS.map(s => (
+            <div key={s.name} className="flex gap-4 group">
+              <span className="text-[var(--text-dim)] w-16 uppercase text-[10px]">link</span>
+              <span className="text-[var(--text-dim)]">{'='}{'>'}</span>
+              <a 
+                href={s.url} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-[var(--color-text)] hover:text-[var(--color-link)] transition-none"
+              >
+                {s.name}
+              </a>
+            </div>
+          ))}
+          <div className="flex gap-4 mt-4 text-[var(--text-dim)] text-[10px]">
+            <span>EOF</span>
+            <span>---</span>
+            <span>0.0.0.0:3000</span>
+          </div>
+        </div>
       </div>
     </motion.section>
   );

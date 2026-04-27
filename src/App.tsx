@@ -5,11 +5,9 @@ import Bio from './components/Bio';
 import Projects from './components/Projects';
 import Publications from './components/Publications';
 import Connect from './components/Connect';
-import ItemModal from './components/ItemModal';
 
 export default function App() {
   const [isBooted, setIsBooted] = useState(false);
-  const [selectedItem, setSelectedItem] = useState<ContentItem | null>(null);
 
   useEffect(() => {
     const timer = setTimeout(() => setIsBooted(true), 500);
@@ -19,7 +17,7 @@ export default function App() {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      const offset = 80;
+      const offset = 60;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - offset;
 
@@ -32,8 +30,8 @@ export default function App() {
 
   if (!isBooted) {
     return (
-      <div className="min-h-screen bg-[var(--bg-color)] flex items-center justify-center font-mono text-[var(--color-link)] uppercase tracking-widest">
-        Booting...
+      <div className="min-h-screen bg-[var(--bg-color)] flex items-center justify-center font-mono text-[var(--color-link)] uppercase tracking-[0.3em] text-xs">
+        [ system_boot_sequence_init ]
       </div>
     );
   }
@@ -42,16 +40,12 @@ export default function App() {
     <div className="relative min-h-screen w-full bg-[var(--bg-color)] font-mono text-[var(--text-primary)] px-4 md:px-8 pb-32">
       <Navigation onNavigate={scrollToSection} />
 
-      <main className="max-w-2xl mx-auto pt-32">
+      <main className="max-w-2xl mx-auto pt-20">
         <Bio />
-        <Projects onSelect={setSelectedItem} />
-        <Publications onSelect={setSelectedItem} />
+        <Projects />
+        <Publications />
         <Connect />
-
-
       </main>
-
-      <ItemModal item={selectedItem} onClose={() => setSelectedItem(null)} />
     </div>
   );
 }

@@ -3,11 +3,9 @@ import { motion } from 'motion/react';
 import { ArrowUpRight, Monitor, Cpu, Globe } from 'lucide-react';
 import { RESEARCH, ContentItem } from '../constants';
 
-interface ProjectsProps {
-  onSelect: (item: ContentItem) => void;
-}
+interface ProjectsProps {}
 
-export default function Projects({ onSelect }: ProjectsProps) {
+export default function Projects({}: ProjectsProps) {
   const getVisualIcon = (id: string) => {
     if (id === 'r1') return <Monitor size={48} className="text-[var(--color-heading)]" />;
     if (id === 'r2') return <Globe size={48} className="text-[var(--color-link)]" />;
@@ -40,55 +38,33 @@ export default function Projects({ onSelect }: ProjectsProps) {
         <h2 className="text-[var(--color-title)] text-lg tracking-[0.2em] bg-[var(--color-title-bg)] px-2 py-1">Projects</h2>
       </div> */}
 
-      <div className="mt-12 space-y-14">
+      <div className="mt-8 space-y-4">
         {RESEARCH.map((item) => (
           <div
             key={item.id}
             onClick={() => {
               if (item.github) {
                 window.open(item.github, '_blank', 'noopener,noreferrer');
-              } else {
-                onSelect(item);
               }
             }}
-            className={`group flex gap-8 cursor-pointer border-b border-[var(--border-color)]/20 pb-12 items-start h-full
-              ${item.image ? 'flex-col xl:flex-row' : 'flex-col items-center text-center'}
-            `}
+            className="group cursor-pointer border-l-2 border-transparent hover:border-[var(--color-link)] pl-4 py-1 transition-all"
           >
-            {/* Left Side: Title + Description */}
-            <div
-              className={`flex flex-col ${
-                item.image
-                  ? 'w-full xl:w-[45%]'
-                  : 'w-full max-w-2xl items-center'
-              }`}
->
-              <h3 className="text-lg text-[var(--color-text)] tracking-[0.1em] mb-4 group-hover:text-[var(--color-link)] transition-none">
-                {item.name}
+            <div className="flex items-center gap-3">
+              <span className="text-[var(--text-dim)] text-[10px] hidden sm:inline">drwx------</span>
+              <h3 className="text-sm font-bold text-[var(--color-text)] group-hover:text-[var(--color-link)] transition-none flex items-center gap-2">
+                <span className="text-[var(--color-heading)] opacity-60">./</span>{item.name.toLowerCase().replace(/\s+/g, '_')}
               </h3>
-              
-              <p
-                className={`leading-relaxed opacity-80 group-hover:opacity-100 lg:text-sm line-clamp-6 ${
-                  item.image ? '' : 'text-center'
-                }`}
-              >
-                {item.description}
-              </p>
-              
-              
             </div>
-
-            {/* Right Side: Image */}
-            {item.image && (
-              <div className="w-full xl:w-[55%] relative aspect-video bg-black/10 rounded-sm overflow-hidden flex items-center justify-center">
-                <img 
-                  src={item.image} 
-                  alt={item.name}
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-contain transition-all filter drop-shadow-[0_0_10px_rgba(0,0,0,0.3)]" 
-                />
-              </div>
-            )}
+            
+            <p className="mt-1 text-xs opacity-70 leading-relaxed font-mono pl-4 sm:pl-[70px]">
+              {item.description}
+            </p>
+            
+            <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-[10px] text-[var(--text-dim)] uppercase tracking-tighter pl-4 sm:pl-[70px]">
+              {item.tech.map(t => (
+                <span key={t} className="bg-[var(--border-color)] px-1 py-0 px-2 rounded-none">#{t.toLowerCase().replace(/\s+/g, '')}</span>
+              ))}
+            </div>
           </div>
         ))}
       </div>

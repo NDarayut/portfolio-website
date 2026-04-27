@@ -25,54 +25,28 @@
   }
 
   body {
-    @apply bg-[var(--bg-color)] text-[var(--text-primary)] text-[14px] font-mono selection:bg-[var(--color-link)] selection:text-black;
+    @apply bg-[var(--bg-color)] text-[var(--text-primary)] text-[13px] font-mono selection:bg-[var(--color-link)] selection:text-black;
   }
 
   html {
     scroll-behavior: smooth;
-    scrollbar-width: thin;
-    scrollbar-color: var(--border-color) var(--bg-color);
+    scrollbar-width: none;
   }
 
   ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: var(--bg-color);
-    border-left: 1px solid var(--border-color);
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: var(--text-dim);
-    border-radius: 4px;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: var(--color-link);
+    width: 0px;
+    height: 0px;
   }
   
   /* Disable all heading default sizes */
   h1, h2, h3, h4, h5, h6 {
-    @apply text-[14px] font-bold m-0 p-0;
+    @apply text-[13px] font-bold m-0 p-0;
   }
 }
 
 @layer utilities {
   .terminal-border {
     @apply border border-[var(--border-color)] bg-[var(--terminal-bg)];
-  }
-  
-  .bracket-link {
-    @apply before:content-['['] after:content-[']'] text-[var(--color-text)] hover:text-[var(--color-link)] hover:underline transition-none cursor-pointer;
-  }
-
-   
-  
-  .bracket-link::before,
-  .bracket-link::after {
-    @apply text-[var(--text-dim)] px-1 no-underline inline-block transition-colors;
   }
 }
 
