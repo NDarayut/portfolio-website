@@ -1,13 +1,38 @@
 import React, { useState, useEffect } from 'react';
-import { ContentItem } from './constants';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 import Navigation from './components/Navigation';
 import Bio from './components/Bio';
 import Projects from './components/Projects';
 import Publications from './components/Publications';
+import Posts from './components/Posts';
+import PostDetail from './components/PostDetail';
 import Connect from './components/Connect';
+import TerminalWidgets from './components/TerminalWidgets';
 
-export default function App() {
+function Home() {
+  return (
+    <>
+      <Bio />
+      <Projects />
+      <Publications />
+      <Connect />
+    </>
+  );
+}
+
+function AppContent() {
   const [isBooted, setIsBooted] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const timer = setTimeout(() => setIsBooted(true), 500);
@@ -39,13 +64,35 @@ export default function App() {
   return (
     <div className="relative min-h-screen w-full bg-[var(--bg-color)] font-mono text-[var(--text-primary)] px-4 md:px-8 pb-32">
       <Navigation onNavigate={scrollToSection} />
+      
+      <Routes>
+        <Route path="/" element={
+          <main className="max-w-2xl mx-auto pt-20">
+            <Home />
+          </main>
+        } />
+        <Route path="/posts" element={
+          <main className="max-w-2xl mx-auto pt-20">
+            <Posts />
+          </main>
+        } />
+        <Route path="/posts/:slug" element={
+          <main className="max-w-4xl mx-auto pt-20">
+            <PostDetail />
+          </main>
+        } />
+      </Routes>
 
-      <main className="max-w-2xl mx-auto pt-20">
-        <Bio />
-        <Projects />
-        <Publications />
-        <Connect />
-      </main>
+      <TerminalWidgets />
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <Router>
+      <ScrollToTop />
+      <AppContent />
+    </Router>
   );
 }

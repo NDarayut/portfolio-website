@@ -69,6 +69,92 @@ export const PUBLICATIONS: ContentItem[] = [
   }
 ];
 
+export interface Post {
+  id: string;
+  slug: string;
+  title: string;
+  date: string;
+  excerpt: string;
+  content: string;
+  tags: string[];
+}
+
+export const POSTS: Post[] = [
+  {
+    id: "p1",
+    slug: "khmer-script-processing",
+    title: "Deep Learning in Khmer Script Processing",
+    date: "2024-03-12",
+    excerpt: "Exploring the challenges of Khmer character segmentation and how transformers are changing the OCR landscape.",
+    content: `
+# Challenges in Khmer Script OCR
+
+Khmer script, with its 33 consonants, 24 vowels, and complex stacking mechanism (subscripts), presents a unique challenge for traditional OCR systems.
+
+## The Stacking Problem
+
+In Khmer, many consonants have a "subscript" form. These are written below the primary consonant, sometimes even shifting the entire word's baseline.
+
+### Traditional Approaches
+Early OCR systems used handcrafted features which were brittle.
+
+### Deep Learning Shift
+With the advent of CNNs and later Transformers, we can now handle these spatial relationships more effectively.
+
+## Transformers in OCR
+
+Attention mechanisms allow the model to look at the entire context of a line, ensuring that ambiguous characters are resolved based on linguistic patterns.
+    `,
+    tags: ["Deep Learning", "OCR", "Khmer"]
+  },
+  {
+    id: "p2",
+    slug: "document-restoration-unets",
+    title: "Document Restoration with U-Nets",
+    date: "2023-11-05",
+    excerpt: "A deep dive into using Attention U-Nets for cleaning noisy historical manuscripts.",
+    content: `
+# Historical Document Restoration
+
+Historical manuscripts often suffer from degradation, mold, and ink bleed-through.
+
+## Why U-Net?
+
+U-Net's encoder-decoder architecture with skip connections is perfect for pixel-wise restoration.
+
+### Attention Gates
+By adding attention gates, we can force the model to ignore noisy backgrounds and focus on faint ink strokes.
+
+## Results on Palm Leaf Manuscripts
+Our experiments showed that Attention U-Net variants outperform standard denoising algorithms by over 15% in PSNR metrics.
+    `,
+    tags: ["Computer Vision", "History", "AI"]
+  },
+  {
+    id: "p3",
+    slug: "vector-databases-shift",
+    title: "The Shift to Vector Databases",
+    date: "2023-08-20",
+    excerpt: "Why traditional RDBMS might not be enough for your next LLM-powered application.",
+    content: `
+# The Rise of Vector Databases
+
+As we move towards RAG (Retrieval-Augmented Generation) architectures, the way we store data is changing.
+
+## RDBMS vs. Vector DB
+
+- **RDBMS**: Perfect for structured data and ACID compliance.
+- **Vector DB**: Designed for high-dimensional similarity search.
+
+### Use Cases
+- Semantic Search
+- Image Retrieval
+- Recommendation Engines
+    `,
+    tags: ["Databases", "LLM", "Engineering"]
+  }
+];
+
 export const SOCIALS = [
   { name: 'GitHub', url: 'https://github.com/NDarayut' },
   { name: 'ResearchGate', url: 'https://www.researchgate.net/profile/Darayut-Nhem?ev=hdr_xprf' },
