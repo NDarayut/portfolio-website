@@ -32,8 +32,6 @@ export default function Connect() {
         <div className="space-y-1 font-mono text-sm">
           {SOCIALS.map(s => (
             <div key={s.name} className="flex gap-4 group">
-              <span className="text-[var(--text-dim)] w-16 uppercase text-[10px]">link</span>
-              <span className="text-[var(--text-dim)]">{'='}{'>'}</span>
               <a 
                 href={s.url} 
                 target="_blank" 
