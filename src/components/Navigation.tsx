@@ -42,7 +42,7 @@ export default function Navigation({ onToggle, wins, winMeta }: NavigationProps)
     <footer className="win-taskbar h-9 flex items-center px-1 gap-1 shrink-0">
       {/* Click-away overlay for the Start menu */}
       {startOpen && (
-        <div className="fixed inset-0 z-9999" onClick={() => setStartOpen(false)} />
+        <div className="fixed inset-0 z-9998" onClick={() => setStartOpen(false)} />
       )}
 
       {/* Start Button + menu */}
