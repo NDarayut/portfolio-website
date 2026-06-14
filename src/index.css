@@ -1,15 +1,23 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'px_sans_nouveaux';
+  src: url('/assets/px_sans_nouveaux.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
-  --font-sans: 'MS Sans Serif', 'Microsoft Sans Serif', Tahoma, Geneva, sans-serif;
-  --font-pixel: 'MS Sans Serif', 'Microsoft Sans Serif', Tahoma, Geneva, sans-serif;
+  --font-sans: 'px_sans_nouveaux', 'MS Sans Serif', Tahoma, Geneva, sans-serif;
+  --font-pixel: 'px_sans_nouveaux', 'MS Sans Serif', Tahoma, Geneva, sans-serif;
 }
 
 @layer base {
   :root {
     --win-raised: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf;
     --win-sunken: inset 1px 1px #0a0a0a, inset -1px -1px #ffffff, inset 2px 2px #808080, inset -2px -2px #dfdfdf;
-    --win-ui-font: 'MS Sans Serif', 'Microsoft Sans Serif', Tahoma, Geneva, sans-serif;
+    --win-ui-font: 'px_sans_nouveaux', 'MS Sans Serif', Tahoma, Geneva, sans-serif;
     --win-title-active: linear-gradient(90deg, #0A246A 0%, #A6CAF0 100%);
     --win-title-inactive: linear-gradient(90deg, #808080 0%, #b5b5b5 100%);
   }
